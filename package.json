@@ -9,7 +9,9 @@
   ],
   "scripts": {
     "build": "npx tsc",
-    "test": "npx jest"
+    "test": "npx jest",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "author": "carlos@usewaypoint.com",
   "license": "MIT",
