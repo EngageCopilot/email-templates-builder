@@ -4,7 +4,6 @@ import { Box, Button, Divider, Drawer, Link, Stack, Typography } from '@mui/mate
 
 import { useSamplesDrawerOpen } from '../../documents/editor/EditorContext';
 
-
 export const SAMPLES_DRAWER_WIDTH = 0;
 
 export default function SamplesDrawer() {
@@ -18,8 +17,6 @@ export default function SamplesDrawer() {
       sx={{
         width: samplesDrawerOpen ? SAMPLES_DRAWER_WIDTH : 0,
       }}
-    >
-     
-    </Drawer>
+    ></Drawer>
   );
 }

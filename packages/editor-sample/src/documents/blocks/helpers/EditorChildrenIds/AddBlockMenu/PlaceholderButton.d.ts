@@ -1,6 +1,6 @@
 import React from 'react';
 type Props = {
-    onClick: () => void;
+  onClick: () => void;
 };
 export default function PlaceholderButton({ onClick }: Props): React.JSX.Element;
 export {};

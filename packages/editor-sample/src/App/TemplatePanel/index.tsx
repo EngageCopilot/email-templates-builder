@@ -4,7 +4,13 @@ import { MonitorOutlined, PhoneIphoneOutlined } from '@mui/icons-material';
 import { Box, Stack, SxProps, ToggleButton, ToggleButtonGroup, Tooltip } from '@mui/material';
 
 import EditorBlock from '../../documents/editor/EditorBlock';
-import { setSelectedScreenSize, useDocument, useSelectedMainTab, useSelectedScreenSize, resetDocument } from '../../documents/editor/EditorContext';
+import {
+  setSelectedScreenSize,
+  useDocument,
+  useSelectedMainTab,
+  useSelectedScreenSize,
+  resetDocument,
+} from '../../documents/editor/EditorContext';
 import ToggleInspectorPanelButton from '../InspectorDrawer/ToggleInspectorPanelButton';
 import ToggleSamplesPanelButton from '../SamplesDrawer/ToggleSamplesPanelButton';
 import DownloadJson from './DownloadJson';
@@ -28,7 +34,8 @@ export default function TemplatePanel() {
       margin: '32px auto',
       width: 370,
       height: 800,
-      boxShadow: 'rgba(33, 36, 67, 0.04) 0px 10px 20px, rgba(33, 36, 67, 0.04) 0px 2px 6px, rgba(33, 36, 67, 0.04) 0px 0px 1px',
+      boxShadow:
+        'rgba(33, 36, 67, 0.04) 0px 10px 20px, rgba(33, 36, 67, 0.04) 0px 2px 6px, rgba(33, 36, 67, 0.04) 0px 0px 1px',
     }),
   };
 
@@ -39,9 +46,17 @@ export default function TemplatePanel() {
   const renderMainPanel = () => {
     switch (selectedMainTab) {
       case 'editor':
-        return <Box sx={mainBoxSx}><EditorBlock id="root" /></Box>;
+        return (
+          <Box sx={mainBoxSx}>
+            <EditorBlock id="root" />
+          </Box>
+        );
       case 'preview':
-        return <Box sx={mainBoxSx}><Reader document={document} rootBlockId="root" /></Box>;
+        return (
+          <Box sx={mainBoxSx}>
+            <Reader document={document} rootBlockId="root" />
+          </Box>
+        );
       case 'html':
         return <HtmlPanel />;
       case 'json':
@@ -71,7 +86,7 @@ export default function TemplatePanel() {
     return () => {
       // Cleanup if needed
     };
-  }, [template_id]);  // Ensuring fetchData runs when template_id changes
+  }, [template_id]); // Ensuring fetchData runs when template_id changes
 
   return (
     <>
@@ -100,10 +115,14 @@ export default function TemplatePanel() {
             <ImportJson />
             <ToggleButtonGroup value={selectedScreenSize} exclusive size="small" onChange={handleScreenSizeChange}>
               <ToggleButton value="desktop">
-                <Tooltip title="Desktop view"><MonitorOutlined fontSize="small" /></Tooltip>
+                <Tooltip title="Desktop view">
+                  <MonitorOutlined fontSize="small" />
+                </Tooltip>
               </ToggleButton>
               <ToggleButton value="mobile">
-                <Tooltip title="Mobile view"><PhoneIphoneOutlined fontSize="small" /></Tooltip>
+                <Tooltip title="Mobile view">
+                  <PhoneIphoneOutlined fontSize="small" />
+                </Tooltip>
               </ToggleButton>
             </ToggleButtonGroup>
             <ShareButton />

@@ -14,6 +14,4 @@ const EMPTY_EMAIL_MESSAGE: TEditorConfiguration = {
   },
 };
 
-
-
 export default EMPTY_EMAIL_MESSAGE;

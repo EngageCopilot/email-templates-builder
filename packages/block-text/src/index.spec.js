@@ -2,13 +2,16 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { Text } from '.';
 describe('block-text', () => {
-    it('renders with default values', () => {
-        expect(render(React.createElement(Text, null)).asFragment()).toMatchSnapshot();
-    });
-    it('sanitizes HTML', () => {
-        expect(render(React.createElement(Text, { props: {
-                markdown: true,
-                text: `
+  it('renders with default values', () => {
+    expect(render(React.createElement(Text, null)).asFragment()).toMatchSnapshot();
+  });
+  it('sanitizes HTML', () => {
+    expect(
+      render(
+        React.createElement(Text, {
+          props: {
+            markdown: true,
+            text: `
 <script>alert(1)</script>
 <img src=x onerror=alert(1) />
 
@@ -27,24 +30,39 @@ describe('block-text', () => {
 ![Escape SRC - onload](https://www.example.com/image.png"onload="alert('ImageOnLoad'))
 ![Escape SRC - onerror]("onerror="alert('ImageOnError'))
 `,
-            } })).asFragment()).toMatchSnapshot();
-    });
-    it('renders with safe markdown', () => {
-        expect(render(React.createElement(Text, { props: {
-                text: `This <span onClick="alert('!')">text</span> block has the **Markdown** option *turned on*.
+          },
+        })
+      ).asFragment()
+    ).toMatchSnapshot();
+  });
+  it('renders with safe markdown', () => {
+    expect(
+      render(
+        React.createElement(Text, {
+          props: {
+            text: `This <span onClick="alert('!')">text</span> block has the **Markdown** option *turned on*.
 
 - One
 - Two
 - Three
 
 Powered by [Waypoint](https://usewaypoint.com)`,
-                markdown: true,
-            } })).asFragment()).toMatchSnapshot();
-    });
-    it('renders without markdown', () => {
-        expect(render(React.createElement(Text, { props: {
-                text: `## This is not <span>markdown</span>`,
-            } })).asFragment()).toMatchSnapshot();
-    });
+            markdown: true,
+          },
+        })
+      ).asFragment()
+    ).toMatchSnapshot();
+  });
+  it('renders without markdown', () => {
+    expect(
+      render(
+        React.createElement(Text, {
+          props: {
+            text: `## This is not <span>markdown</span>`,
+          },
+        })
+      ).asFragment()
+    ).toMatchSnapshot();
+  });
 });
 //# sourceMappingURL=index.spec.js.map

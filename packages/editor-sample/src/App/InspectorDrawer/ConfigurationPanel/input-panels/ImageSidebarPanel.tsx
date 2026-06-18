@@ -44,7 +44,7 @@ export default function ImageSidebarPanel({ data, setData }: ImageSidebarPanelPr
 
     try {
       const formData = new FormData();
-      // Make sure the field name here matches what your Laravel controller expects, 
+      // Make sure the field name here matches what your Laravel controller expects,
       // e.g., 'image' or 'file' or similar.
       formData.append('image', file);
 
@@ -106,12 +106,7 @@ export default function ImageSidebarPanel({ data, setData }: ImageSidebarPanelPr
       ) : (
         <Button variant="contained" component="label" sx={{ mt: 1, mb: 2 }}>
           Upload Image
-          <input
-            type="file"
-            hidden
-            accept="image/*"
-            onChange={handleFileChange}
-          />
+          <input type="file" hidden accept="image/*" onChange={handleFileChange} />
         </Button>
       )}
       {/* ------------------------------------ */}
@@ -119,9 +114,7 @@ export default function ImageSidebarPanel({ data, setData }: ImageSidebarPanelPr
       <TextInput
         label="Alt text"
         defaultValue={data.props?.alt ?? ''}
-        onChange={(alt) =>
-          updateData({ ...data, props: { ...data.props, alt } })
-        }
+        onChange={(alt) => updateData({ ...data, props: { ...data.props, alt } })}
       />
       <TextInput
         label="Click through URL"
@@ -135,25 +128,19 @@ export default function ImageSidebarPanel({ data, setData }: ImageSidebarPanelPr
         <TextDimensionInput
           label="Width"
           defaultValue={data.props?.width}
-          onChange={(width) =>
-            updateData({ ...data, props: { ...data.props, width } })
-          }
+          onChange={(width) => updateData({ ...data, props: { ...data.props, width } })}
         />
         <TextDimensionInput
           label="Height"
           defaultValue={data.props?.height}
-          onChange={(height) =>
-            updateData({ ...data, props: { ...data.props, height } })
-          }
+          onChange={(height) => updateData({ ...data, props: { ...data.props, height } })}
         />
       </Stack>
 
       <RadioGroupInput
         label="Alignment"
         defaultValue={data.props?.contentAlignment ?? 'middle'}
-        onChange={(contentAlignment) =>
-          updateData({ ...data, props: { ...data.props, contentAlignment } })
-        }
+        onChange={(contentAlignment) => updateData({ ...data, props: { ...data.props, contentAlignment } })}
       >
         <ToggleButton value="top">
           <VerticalAlignTopOutlined fontSize="small" />

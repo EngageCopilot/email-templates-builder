@@ -4,5 +4,7 @@ import { BaseZodDictionary, DocumentBlocksDictionary } from '../utils';
  * @param blocks Main DocumentBlocksDictionary
  * @returns typed DocumentBlocksDictionary
  */
-export default function buildBlockConfigurationDictionary<T extends BaseZodDictionary>(blocks: DocumentBlocksDictionary<T>): DocumentBlocksDictionary<T>;
+export default function buildBlockConfigurationDictionary<T extends BaseZodDictionary>(
+  blocks: DocumentBlocksDictionary<T>
+): DocumentBlocksDictionary<T>;
 //# sourceMappingURL=buildBlockConfigurationDictionary.d.ts.map

@@ -1,7 +1,7 @@
 import React from 'react';
 export declare const useCurrentBlockId: () => string;
 type EditorBlockProps = {
-    id: string;
+  id: string;
 };
 /**
  *

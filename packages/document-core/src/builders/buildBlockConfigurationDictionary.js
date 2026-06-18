@@ -4,6 +4,6 @@
  * @returns typed DocumentBlocksDictionary
  */
 export default function buildBlockConfigurationDictionary(blocks) {
-    return blocks;
+  return blocks;
 }
 //# sourceMappingURL=buildBlockConfigurationDictionary.js.map

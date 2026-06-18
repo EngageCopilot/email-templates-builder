@@ -1,6 +1,6 @@
 import { TReaderDocument } from '../Reader/core';
 type TOptions = {
-    rootBlockId: string;
+  rootBlockId: string;
 };
 export default function renderToStaticMarkup(document: TReaderDocument, { rootBlockId }: TOptions): string;
 export {};

@@ -9,12 +9,15 @@ export const useCurrentBlockId = () => useContext(EditorBlockContext);
  * @returns EditorBlock component that loads data from the EditorDocumentContext
  */
 export default function EditorBlock({ id }) {
-    const document = useDocument();
-    const block = document[id];
-    if (!block) {
-        throw new Error('Could not find block');
-    }
-    return (React.createElement(EditorBlockContext.Provider, { value: id },
-        React.createElement(CoreEditorBlock, Object.assign({}, block))));
+  const document = useDocument();
+  const block = document[id];
+  if (!block) {
+    throw new Error('Could not find block');
+  }
+  return React.createElement(
+    EditorBlockContext.Provider,
+    { value: id },
+    React.createElement(CoreEditorBlock, Object.assign({}, block))
+  );
 }
 //# sourceMappingURL=EditorBlock.js.map

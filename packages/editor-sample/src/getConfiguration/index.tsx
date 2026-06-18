@@ -15,7 +15,5 @@ const EMPTY_EMAIL_MESSAGE: TEditorConfiguration = {
 };
 
 export default function getConfiguration(template: string) {
-  
-
   return EMPTY_EMAIL_MESSAGE;
 }
