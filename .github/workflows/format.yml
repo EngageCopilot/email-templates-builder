@@ -5,7 +5,6 @@ on:
 
 permissions:
   contents: write
-  workflows: write
 
 concurrency:
   group: format-${{ github.ref }}
@@ -34,5 +33,4 @@ jobs:
       - name: Commit formatting changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: apply prettier formatting"
-          skip_ci: true
+          commit_message: "chore: apply prettier formatting [skip ci]"
