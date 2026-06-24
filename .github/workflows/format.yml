@@ -5,6 +5,7 @@ on:
 
 permissions:
   contents: write
+  workflows: write
 
 concurrency:
   group: format-${{ github.ref }}
